@@ -1,0 +1,554 @@
+/* Main Container */
+.search-using-jd {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Page Header */
+.search-using-jd h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.search-using-jd p {
+  color: #64748b;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Upload JD Section - Glassmorphism */
+.upload-jd-section {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+  margin-bottom: 3rem;
+}
+
+/* JD Method Tabs */
+.jd-method-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  background: #f1f5f9;
+  border-radius: 14px;
+  width: fit-content;
+}
+
+.jd-tab {
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.jd-tab.active {
+  background: white;
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.jd-tab:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.5);
+  color: #334155;
+}
+
+/* Drop Zone & Textarea */
+.jd-drop-zone {
+  border: 2px dashed #e2e8f0;
+  border-radius: 20px;
+  padding: 4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  background: #f8fafc;
+}
+
+.jd-drop-zone.drag-active {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  transform: scale(1.005);
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.browse-jd-btn {
+  display: inline-block;
+  background: #0f172a;
+  color: white;
+  padding: 0.8rem 2.25rem;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s;
+}
+
+.browse-jd-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+.jd-textarea {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 18px;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #0f172a;
+  resize: vertical;
+  min-height: 250px;
+  margin-bottom: 2rem;
+  transition: all 0.2s;
+}
+
+.jd-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.find-candidates-btn {
+  width: 100%;
+  max-width: 320px;
+  background: #0f172a;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.find-candidates-btn:hover:not(:disabled) {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.find-candidates-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Results Content */
+.results-section {
+  margin-top: 3rem;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.results-header h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.results-summary-badges {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.summary-badge {
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  border: 1px solid #e2e8f0;
+}
+
+.summary-badge.total {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* Requirements Board */
+.extracted-requirements {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 1.75rem;
+  margin-bottom: 3rem;
+  border: 1px solid #e2e8f0;
+}
+
+.extracted-requirements h4 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.25rem;
+}
+
+.jd-skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.jd-skill-tag {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.jd-skill-tag.required {
+  background: white;
+  color: #2563eb;
+  border: 1px solid #dbeafe;
+}
+
+.jd-skill-tag.preferred {
+  background: white;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+/* Result Cards List */
+.results-container-main {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+}
+
+.results-sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.results-sidebar .filter-group h4 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #334155;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.sidebar-search-box {
+  position: relative;
+}
+
+.sidebar-search-box input {
+  width: 100%;
+  padding: 0.875rem 2.5rem 0.875rem 1.25rem;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  background: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.sidebar-search-box input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.search-icon-sm {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+/* PREMIUM MATCH CARD STRUCTURE */
+.results-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.result-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.result-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+/* Match Score Pill */
+.match-score-pill {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: white;
+  padding: 0.5rem 0.85rem;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #f1f5f9;
+  z-index: 2;
+}
+
+.score-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.score-dot.high {
+  background: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.score-dot.medium {
+  background: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.score-dot.low {
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+/* Card Top Header */
+.card-top-info {
+  padding: 1.75rem;
+  background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.candidate-initials {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  flex-shrink: 0;
+}
+
+.candidate-meta h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.2px;
+}
+
+.meta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.user-type-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.match-detail-badge {
+  font-size: 0.6rem;
+  font-weight: 800;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* Metric Grid */
+.info-blocks-grid {
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.info-block .info-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-block .info-value {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+/* Skills Section */
+.card-skills-section {
+  padding: 0 1.75rem 1.75rem 1.75rem;
+  flex: 1;
+}
+
+.skills-title {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.skills-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skill-result-tag {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid #dbeafe;
+}
+
+.more-skills-btn {
+  background: transparent;
+  border: none;
+  color: #3b82f6;
+  font-weight: 800;
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  padding: 0;
+}
+
+/* Action Footer */
+.view-resume-action {
+  padding: 1.25rem 1.75rem;
+  background: #f9fafb;
+  border-top: 1px solid #f1f5f9;
+}
+
+.view-resume-link {
+  text-decoration: none;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1.5px solid #0f172a;
+  padding: 0.6rem 0;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.2s;
+}
+
+.view-resume-link:hover {
+  background: #0f172a;
+  color: white;
+}
+
+/* Unique JD Skills Styling */
+.jd-skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.jd-skill-tag {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.jd-skill-tag.required {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.jd-skill-tag.preferred {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.relocate-subtext {
+  display: block;
+  font-size: 0.75rem;
+  color: #3b82f6;
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .results-container-main {
+    grid-template-columns: 1fr;
+  }
+
+  .results-sidebar {
+    position: static;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,155 @@
+.admin-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f4c75 0%, #3282b8 25%, #bbe1fa 50%, #1b262c 75%, #0f4c75 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  padding-bottom: 3rem;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.admin-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;
+}
+
+.admin-header h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(135deg, #1b262c 0%, #0f4c75 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1.5px;
+}
+
+.admin-header p {
+  font-size: 1.1rem;
+  color: #3282b8;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.admin-tab {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.75rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1b262c;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin-tab:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: #ffffff;
+}
+
+.admin-tab.active {
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.admin-tab.tab-dashboard.active {
+  color: #3282b8;
+  border-color: #3282b8;
+}
+
+.admin-tab.tab-search-talent.active {
+  color: #6366f1;
+  border-color: #6366f1;
+}
+
+.admin-tab.tab-search-jd.active {
+  color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.admin-tab.tab-add-resume.active {
+  color: #ec4899;
+  border-color: #ec4899;
+}
+
+.tab-icon {
+  font-size: 1.3rem;
+}
+
+.tab-label {
+  font-size: 1rem;
+}
+
+.admin-content-area {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  min-height: 500px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-header h1 {
+    font-size: 2rem;
+  }
+
+  .admin-tabs {
+    flex-direction: column;
+  }
+
+  .admin-tab {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .admin-content-area {
+    padding: 1.5rem;
+  }
+}
