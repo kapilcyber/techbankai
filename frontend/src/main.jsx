@@ -22,7 +22,7 @@ try {
   root.render(
     <React.StrictMode>
       <ErrorBoundary>
-        <GoogleOAuthProvider clientId="645437651186-0sg2k268l39k2tj2to5hdmu2fbnppaei.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId="646588737744-ervf3j64kdic8iektcc9sflflm3c7iie.apps.googleusercontent.com">
           <BrowserRouter>
             <App />
           </BrowserRouter>

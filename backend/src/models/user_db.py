@@ -17,6 +17,9 @@ class User(Base):
     city = Column(String(100))
     pincode = Column(String(10))
     mode = Column(String(20), default="user")  # user or admin
+    employment_type = Column(String(50), nullable=True) # Company Employee, Freelancer, Guest User
+    employee_id = Column(String(50), nullable=True)
+    freelancer_id = Column(String(50), nullable=True)
     currently_working = Column(Boolean, default=True)  # Currently employed/working
     current_company = Column(String(200), nullable=True)  # Current company name
     ready_to_relocate = Column(Boolean, default=False)

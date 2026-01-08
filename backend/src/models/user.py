@@ -15,6 +15,8 @@ class UserCreate(BaseModel):
     city: str
     pincode: str
     mode: Optional[str] = "user"  # user or admin
+    employment_type: str = "Guest User"
+    employee_id: Optional[str] = None
     ready_to_relocate: Optional[bool] = False
     preferred_location: Optional[str] = None
     notice_period: Optional[int] = 0
@@ -34,6 +36,9 @@ class UserResponse(BaseModel):
     name: str
     email: str
     mode: str
+    employment_type: Optional[str] = None
+    employee_id: Optional[str] = None
+    freelancer_id: Optional[str] = None
     ready_to_relocate: Optional[bool] = False
     preferred_location: Optional[str] = None
     notice_period: Optional[int] = 0

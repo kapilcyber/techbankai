@@ -19,8 +19,7 @@ const SignUp = () => {
     city: '',
     pincode: '',
     role: '',
-    employeeId: '',
-    freelancerId: ''
+    employeeId: ''
   })
 
   const [errors, setErrors] = useState({})
@@ -73,8 +72,7 @@ const SignUp = () => {
       [name]: value,
       // Clear conditional fields when role changes
       ...(name === 'role' && {
-        employeeId: '',
-        freelancerId: ''
+        employeeId: ''
       })
     }))
 
@@ -152,11 +150,6 @@ const SignUp = () => {
           error = 'Employee ID is required'
         }
         break
-      case 'freelancerId':
-        if (formData.role === 'Freelancer' && !value.trim()) {
-          error = 'ID is required'
-        }
-        break
 
       default:
         break
@@ -198,9 +191,6 @@ const SignUp = () => {
     if (formData.role === 'Company Employee') {
       return baseValid && formData.employeeId.trim()
     }
-    if (formData.role === 'Freelancer') {
-      return baseValid && formData.freelancerId.trim()
-    }
 
 
     return baseValid
@@ -225,7 +215,9 @@ const SignUp = () => {
         state: formData.state,
         city: formData.city,
         pincode: formData.pincode,
-        mode: 'user' // All signups are regular users
+        mode: 'user', // All signups are regular users
+        employment_type: formData.role,
+        employee_id: formData.role === 'Company Employee' ? formData.employeeId : null
       }
 
       const data = await register(signupData)
@@ -351,7 +343,6 @@ const SignUp = () => {
                   className={errors.fullName ? 'error' : ''}
                   autoComplete="off"
                 />
-                {errors.fullName && <span className="error-message">{errors.fullName}</span>}
               </motion.div>
 
               <motion.div
@@ -374,7 +365,6 @@ const SignUp = () => {
                   className={errors.dateOfBirth ? 'error' : ''}
                   autoComplete="off"
                 />
-                {errors.dateOfBirth && <span className="error-message">{errors.dateOfBirth}</span>}
               </motion.div>
 
               <motion.div
@@ -397,7 +387,6 @@ const SignUp = () => {
                   className={errors.email ? 'error' : ''}
                   autoComplete="off"
                 />
-                {errors.email && <span className="error-message">{errors.email}</span>}
               </motion.div>
 
               <motion.div
@@ -430,7 +419,6 @@ const SignUp = () => {
                     {showPassword ? '🙈' : '👁️'}
                   </button>
                 </div>
-                {errors.password && <span className="error-message">{errors.password}</span>}
                 {!errors.password && formData.password && (
                   <div className="password-requirements">
                     <span className={formData.password.length >= 8 ? 'valid' : ''}>
@@ -479,7 +467,6 @@ const SignUp = () => {
                     {showConfirmPassword ? '🙈' : '👁️'}
                   </button>
                 </div>
-                {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
               </motion.div>
             </div>
 
@@ -507,7 +494,6 @@ const SignUp = () => {
                   <option value="Freelancer">Freelancer</option>
                   <option value="Guest User">Guest User</option>
                 </select>
-                {errors.role && <span className="error-message">{errors.role}</span>}
               </motion.div>
 
               {formData.role === 'Company Employee' && (
@@ -532,35 +518,10 @@ const SignUp = () => {
                     className={errors.employeeId ? 'error' : ''}
                     autoComplete="off"
                   />
-                  {errors.employeeId && <span className="error-message">{errors.employeeId}</span>}
                 </motion.div>
               )}
 
-              {formData.role === 'Freelancer' && (
-                <motion.div
-                  className="form-group"
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <label htmlFor="freelancerId">
-                    ID <span className="required">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="freelancerId"
-                    name="freelancerId"
-                    value={formData.freelancerId}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    placeholder="Enter your ID"
-                    className={errors.freelancerId ? 'error' : ''}
-                    autoComplete="off"
-                  />
-                  {errors.freelancerId && <span className="error-message">{errors.freelancerId}</span>}
-                </motion.div>
-              )}
+
 
 
 
@@ -587,7 +548,6 @@ const SignUp = () => {
                     <option key={state} value={state}>{state}</option>
                   ))}
                 </select>
-                {errors.state && <span className="error-message">{errors.state}</span>}
               </motion.div>
 
               <motion.div
@@ -610,7 +570,6 @@ const SignUp = () => {
                   className={errors.city ? 'error' : ''}
                   autoComplete="off"
                 />
-                {errors.city && <span className="error-message">{errors.city}</span>}
               </motion.div>
 
               <motion.div
@@ -640,7 +599,6 @@ const SignUp = () => {
                   autoComplete="off"
                   inputMode="numeric"
                 />
-                {errors.pincode && <span className="error-message">{errors.pincode}</span>}
               </motion.div>
             </div>
           </div>
