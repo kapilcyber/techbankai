@@ -1,5 +1,7 @@
-tools:
-  - name: PMD
-    enabled: false
-  - name: PMD-legacy
-    enabled: false
+engines:
+  pmd:
+    enabled: true
+    config: pmd-ruleset.xml
+  pmd-legacy:
+    enabled: true
+    config: pmd-ruleset.xml
